@@ -24,3 +24,8 @@ La palabra es: _i___
 Te quedan 5 intentos
  
 */
+
+function juegoDelAhorcado(palabra){
+    // console.log("Prueva esjercisio")
+    // 
+}
