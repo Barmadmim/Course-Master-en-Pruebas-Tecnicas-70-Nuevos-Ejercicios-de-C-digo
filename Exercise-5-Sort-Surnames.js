@@ -23,3 +23,32 @@ ordenarPorApellidos([
 ]);  
  
 */
+
+function ordenarPorApellidos(personas) {
+  // Crear variable con
+  const apellidos = personas.map((persona) => persona.split(" ")[1]);
+
+  // Ordenar apellidos
+  apellidos.sort();
+
+  // Crear
+  const personasOrdenadas = apellidos.map((apellido) => {
+    const nombreOriginal = personas.find((nombreCompleto) => {
+      return nombreCompleto.split(" ")[1] === apellido;
+    });
+    return nombreOriginal;
+  });
+
+  return;
+}
+
+console.log(
+  ordenarPorApellidos([
+    "Víctor Robles",
+    "Antonio Alcantara",
+    "Al Pacino",
+    "Robert DeNiro",
+    "Brad Pitt",
+    "Sylvester Stallone",
+  ])
+);
