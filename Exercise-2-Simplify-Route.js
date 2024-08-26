@@ -18,3 +18,29 @@ simplificarRuta("/../");               // Salida: /
 simplificarRuta("/home//pruebas/");    // Salida: /home/pruebas
  
 */
+
+function simplificarRuta(ruta) {
+  // Crear  variable pila para almacenar las partes de la ruta
+  let pila = [];
+
+  // Dividir la ruta en sus diferentes partes utilisando el separador/
+  const partes = ruta.split("/");
+
+  // Recorer cada parte
+  for (const parte of partes) {
+    // Si la parte es .. Quitar Ultimo elemento con .pop();
+
+    if (parte === "..") {
+      pila.pop();
+    }
+
+    // Si la parte es diferente a "." a ".." o a una cadena vacia = Guardar en la pila
+    else if(parte !== "." && parte !== ""){
+        pila.push(parte)
+    }
+  }
+
+  return '/' + pila.join("/");
+}
+
+console.log(simplificarRuta("/home//pruevas"));
