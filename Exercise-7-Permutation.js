@@ -23,3 +23,34 @@ permutacion([1, 2, 3, 4, 5])   // Devuelve: 5
 permutacion([1, 2, 3, 5]))     // Devuelve: 4
  
 */
+
+function permutacion(numeros) {
+  // Ordenar el array de
+
+  numeros.sort((menor, mayor) => menor - mayor);
+
+  // Pila de numeros faltantes
+  let numerosFaltantes = [];
+
+  // Recorrer el array y comprobar si cada elemento es igual al siguiente numero mas 1
+
+  for (let i = 0; i < numeros.length; i++) {
+    let numerosFalta = numeros[i] + 1;
+    if (numeros[i + 1] !== numerosFalta) {
+      numerosFaltantes.push(numerosFalta);
+    }
+  }
+  // Limpira el ultimo numero del array
+  numerosFaltantes.pop();
+
+  // Si todo es correcto devolver  el ultimo numero
+  let resultado = numeros[numeros,length - 1];
+  if(numerosFaltantes.length >= 1){
+    resultado = numerosFaltantes[numerosFaltantes.length - 1]
+  }
+
+  return resultado;
+}
+
+console.log("El numero mas grande que falta en la  secuencia es:", 
+            permutacion([2, 3, 5, 1, 4, 6]));
