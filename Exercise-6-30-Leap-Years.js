@@ -25,3 +25,24 @@ bisiestos(2023);
 2052
  
 */
+
+function bisiestos(anio) {
+  // Tener variable con limites de años
+  const limite = 30;
+
+  // Bucle como años limites tengamos
+  for (let i = 0; i < 30; i++) {
+    // Comprobar si el dia 29 existe en el año actual
+    const fecha = new Date(anio, 1, 29).getMonth();
+
+    if (fecha === 1) {
+      console.log(anio);
+    }
+
+    anio++;
+  }
+
+  // Si existe mostrar años biciestos
+}
+
+console.log(bisiestos(2023));
