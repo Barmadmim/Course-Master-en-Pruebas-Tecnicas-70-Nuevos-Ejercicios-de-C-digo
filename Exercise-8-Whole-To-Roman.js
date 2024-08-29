@@ -16,3 +16,10 @@ enteroARomano(100)); // Resultado:  C
 enteroARomano(345)); // Resultado: CCCXLV
  
 */
+
+funtion enteroARomano(numero){
+
+ 
+}
+
+console.log(enteroARomano(100));
